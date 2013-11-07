@@ -1,0 +1,9 @@
+log_level                :info
+log_location             STDOUT
+node_name                'deploy'
+cookbook_path            '/Users/nms/chef-repo/cookbooks'
+client_key               '/Users/nms/chef-repo/.chef/deploy.pem'
+validation_client_name   'chef-validator'
+validation_key           '/Users/nms/chef-repo/.chef/chef-validator.pem'
+chef_server_url          'https://chef.roundscope.com'
+syntax_check_cache_path  '/Users/nms/chef-repo/.chef/syntax_check_cache'
