@@ -113,3 +113,12 @@ service "couchdb" do
   supports [ :restart, :status ]
   action [:enable, :start]
 end
+
+link "/var/log/couchdb" do
+    to "/usr/local/var/log/couchdb"
+end
+
+link "/etc/couchdb" do
+    to "/usr/local/etc/couchdb"
+end
+
