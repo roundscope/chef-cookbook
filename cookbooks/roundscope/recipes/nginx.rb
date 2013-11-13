@@ -13,3 +13,6 @@ remote_directory "/etc/nginx" do
     mode 0755
 end
 
+service "nginx" do
+  action :restart
+end
