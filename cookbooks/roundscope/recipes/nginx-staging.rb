@@ -45,11 +45,11 @@ directory "/etc/nginx/sites-available" do
 end
 
 link "/etc/nginx/conf.d" do
-    to "/home/deploy/chef-sysconf/mapidy/nginx/conf.d/"
+    to "/home/deploy/chef-sysconf/roscredit-app/nginx/conf.d/"
 end
 
 link "/etc/nginx/sites-available" do
-    to "/home/deploy/chef-sysconf/mapidy/nginx/sites-available/"
+    to "/home/deploy/chef-sysconf/roscredit-app/nginx/sites-available/"
 end
 
 service "nginx" do
