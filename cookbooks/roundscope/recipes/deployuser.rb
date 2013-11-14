@@ -33,7 +33,7 @@ remote_directory "/home/deploy/.ssh" do
   group "deploy"
   files_owner "deploy"
   files_group "deploy"
-  mode 0755
+  mode 0750
 end
 
 group "sudo" do
