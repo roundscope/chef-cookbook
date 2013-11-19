@@ -15,6 +15,7 @@ include_recipe "roundscope::redis"
 include_recipe "roundscope::deployuser"
 include_recipe "roundscope::deployrvm"
 include_recipe "roundscope::sshd_conf"
+include_recipe "roundscope::gitsysconf"
 
 service "nginx" do
   action :stop
