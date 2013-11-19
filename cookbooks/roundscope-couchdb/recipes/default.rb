@@ -6,4 +6,5 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+include_recipe "build-essential"
 include_recipe "couchdb::source"
