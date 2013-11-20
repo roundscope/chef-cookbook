@@ -24,3 +24,7 @@ execute "rvm install 2.0.0" do
     cwd "/root"
 end
 
+execute "rvm --default use 2.0.0" do
+    command 'su - deploy -c "rvm --default use ruby-2.0.0"'
+    cwd "/home/deploy"
+end
