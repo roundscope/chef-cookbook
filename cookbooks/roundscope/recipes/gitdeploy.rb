@@ -16,8 +16,6 @@ cookbook_file "/root/.ssh/rsm.pem" do
     mode 0600
 end
 
-reponame = "git@github.com:roundscope/#{node['rs_git']['reponame']}"
-
 deploy_revision node['rs_git']['dplace'] do
     repo "git@github.com:roundscope/#{node['rs_git']['reponame']}"
     revision node['rs_git']['branch']
