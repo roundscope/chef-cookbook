@@ -23,7 +23,10 @@ include_recipe "roundscope::sshd_conf"
 node.override['rs_git']['branch']    = "staging"
 include_recipe "roundscope::gitdeploy"
 include_recipe "roundscope::unicorn"
+
 include_recipe "roundscope::nodejs"
+include_recipe "roundscope::imagemagick"
+
 include_recipe "roundscope::local_hostname"
 
 file "/etc/nginx/sites-enabled/default" do
