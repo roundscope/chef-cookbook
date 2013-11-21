@@ -36,18 +36,6 @@ remote_directory "/home/deploy/.ssh" do
   mode 0750
 end
 
-cookbook_file "/home/deploy/.ssh/config" do
-  source "gitrsm/config"
-  mode 0600
-  owner "deploy"
-end
-
-cookbook_file "/home/deploy/.ssh/rsm.pem" do
-  source "gitrsm/rsm.pem"
-  mode 0600
-  owner "deploy"
-end
-
 group "sudo" do
   action :modify
   append true

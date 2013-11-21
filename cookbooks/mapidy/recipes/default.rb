@@ -23,6 +23,7 @@ include_recipe "roundscope::sshd_conf"
 node.override['rs_git']['branch']    = "staging"
 include_recipe "roundscope::gitdeploy"
 include_recipe "roundscope::unicorn"
+include_recipe "roundscope::nodejs"
 
 file "/etc/nginx/sites-enabled/default" do
   action :delete
@@ -59,7 +60,7 @@ directory "/var/www/mapidy/" do
   recursive true
   owner "deploy"
   group "deploy"
-  mode 0777
+  mode 0775
 end
 
 directory "/var/www/mapidy/releases" do
@@ -67,12 +68,60 @@ directory "/var/www/mapidy/releases" do
   recursive true
   owner "deploy"
   group "deploy"
-  mode 0777
+  mode 0775
+end
+
+directory "/var/www/mapidy/shared" do
+  action :create
+  recursive true
+  owner "deploy"
+  group "deploy"
+  mode 0775
+end
+
+directory "/var/www/mapidy/shared/log" do
+  action :create
+  recursive true
+  owner "deploy"
+  group "deploy"
+  mode 0775
+end
+
+directory "/var/www/mapidy/shared/pids" do
+  action :create
+  recursive true
+  owner "deploy"
+  group "deploy"
+  mode 0775
+end
+
+directory "/var/www/mapidy/shared/sockets" do
+  action :create
+  recursive true
+  owner "deploy"
+  group "deploy"
+  mode 0775
+end
+
+directory "/var/www/mapidy/shared/tmp" do
+  action :create
+  recursive true
+  owner "deploy"
+  group "deploy"
+  mode 0775
+end
+
+directory "/var/www/mapidy/shared/bundle" do
+  action :create
+  recursive true
+  owner "deploy"
+  group "deploy"
+  mode 0775
 end
 
 
 directory "/var/www/" do
   owner "deploy"
   group "deploy"
-  mode 0777
+  mode 0775
 end
