@@ -14,7 +14,7 @@ end
 user "deploy" do
   comment "Our deploy user"
   action :create
-  password "$6$UnGh1wpK$GalQ7Jzpx8GXuyZMW4IVsAX8G0sEM97PwEagu9JlAy/NpCLcJykF50OdWpzCumO.1Tkmj7IAKMPs60eeHErE31"
+  password "$6$mXosfCnh$0GeLViHgq47K6U/CD5JpBTTiFA3UgpGYNyL6asGxHsFhsZboozQiHzHr.BhDszlf8Xx7eP5wSKYS0y.H.vkMx."
   gid "deploy"
   shell "/bin/bash"
   home "/home/deploy"

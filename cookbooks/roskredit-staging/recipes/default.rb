@@ -23,11 +23,15 @@ service "nginx" do
   action :restart
 end
 
-file "/etc/nginx/sites-available/default" do
+file "/etc/nginx/sites-enabled/default" do
   action :delete
 end
 
 link "/etc/nginx/sites-available/roscredit-app.conf" do
+    to "/usr/local/etc/chef-sysconf/current/roscredit-app/nginx/sites-available/roscredit-app.conf"
+end
+
+link "/etc/nginx/sites-enabled/roscredit-app.conf" do
     to "/usr/local/etc/chef-sysconf/current/roscredit-app/nginx/sites-available/roscredit-app.conf"
 end
 
