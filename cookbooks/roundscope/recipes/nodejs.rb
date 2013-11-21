@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: roundscope
-# Recipe:: libmysql
+# Recipe:: Nodejs package install
 #
 # Copyright 2013, Roundscope
 #
