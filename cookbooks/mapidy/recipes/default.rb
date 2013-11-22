@@ -20,7 +20,7 @@ include_recipe "roundscope::redis"
 include_recipe "roundscope::deployuser"
 include_recipe "roundscope::deployrvm"
 include_recipe "roundscope::sshd_conf"
-node.override['rs_git']['branch']    = "staging"
+node.default['rs_git']['branch']    = "staging"
 include_recipe "roundscope::gitdeploy"
 include_recipe "roundscope::unicorn"
 
@@ -31,6 +31,10 @@ include_recipe "roundscope::local_hostname"
 
 file "/etc/nginx/sites-enabled/default" do
   action :delete
+end
+
+link "/usr/local/etc/elasticsearch/elasticsearch.yml" do
+    to "/usr/local/etc/chef-sysconf/current/mapidy/elasticsearch/elasticsearch.yml"
 end
 
 link "/etc/nginx/sites-available/mapidy.conf" do
