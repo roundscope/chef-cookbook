@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ -d "../.chef" ]; then
+
+  ln -s ../.chef .chef
+
+  if ! [ -d "./tmp" ]; then
+	  mkdir tmp
+  fi
+
+  knife backup export -D ./tmp > /dev/null
+
+  tar czf ./`date +%s.%m.%d.%Y`-chef-server.tar.gz ./tmp
+
+  rm -rf ./tmp
+  rm .chef
+  echo "Backup completed"
+else
+   echo ".chef directory not found, skipping backup"
+fi
