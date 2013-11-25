@@ -1,0 +1,15 @@
+{
+  "name": "production",
+  "description": "Roundscope production environment",
+  "cookbook_versions": {
+  },
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+    "rs_git": {
+      "branch": "production"
+    }
+  },
+  "override_attributes": {
+  }
+}
