@@ -6,6 +6,8 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+include_recipe "roundscope::git"
+
 cookbook_file "/root/.ssh/config" do
     source "gitrsm/config"
     mode 0600
