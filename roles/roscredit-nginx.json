@@ -3,6 +3,9 @@
   "description": "Roundscope roscredit app nginx server role",
   "json_class": "Chef::Role",
   "default_attributes": {
+    "rs_git": {
+      "branch": "staging"
+    }
   },
   "override_attributes": {
   },
