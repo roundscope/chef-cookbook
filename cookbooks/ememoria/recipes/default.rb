@@ -21,6 +21,8 @@ include_recipe "roundscope::unicorn"
 include_recipe "roundscope::nodejs"
 include_recipe "roundscope::imagemagick"
 include_recipe "roundscope::local_hostname"
+node.default['rs_git']['branch']    = "staging"
+include_recipe "roundscope::gitdeploy"
 
 file "/etc/nginx/sites-enabled/default" do
   action :delete
@@ -95,4 +97,25 @@ directory "/var/www/" do
   owner "deploy"
   group "deploy"
   mode 0775
+end
+
+file "/etc/nginx/sites-enabled/default" do
+    action :delete
+end
+
+link "/usr/local/etc/elasticsearch/elasticsearch.yml" do
+      to "/usr/local/etc/chef-sysconf/current/ememoria/elasticsearch/elasticsearch.yml"
+end
+
+link "/etc/nginx/sites-available/ememoria.conf" do
+      to "/usr/local/etc/chef-sysconf/current/ememoria/nginx/sites-available/ememoria.conf"
+end
+
+link "/etc/nginx/sites-enabled/ememoria.conf" do
+      to "/usr/local/etc/chef-sysconf/current/ememoria/nginx/sites-available/ememoria.conf"
+end
+
+
+service "nginx" do
+    action :restart
 end
