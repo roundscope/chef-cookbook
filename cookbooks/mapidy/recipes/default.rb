@@ -134,3 +134,7 @@ directory "/var/www/" do
   group "deploy"
   mode 0775
 end
+
+link "/etc/couchdb/local.ini" do
+  to "/usr/local/etc/chef-sysconf/current/mapidy/couchdb/local.ini"
+end
