@@ -20,6 +20,8 @@ include_recipe "roundscope::unicorn"
 include_recipe "roundscope::nodejs"
 include_recipe "roundscope::imagemagick"
 include_recipe "roundscope::local_hostname"
+include_recipe "roundscope::knockd"
+include_recipe "roundscope::iptables"
 
 directory "/var/www/roscredit-app/" do
   action :create
