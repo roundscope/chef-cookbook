@@ -26,6 +26,7 @@ deploy_revision node['rs_git']['dplace'] do
     symlinks({})
     create_dirs_before_symlink([])
     purge_before_symlink([])
+    action :force_deploy
 end
 
 file "/root/.ssh/config" do
