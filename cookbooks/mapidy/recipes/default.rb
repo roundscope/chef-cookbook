@@ -144,11 +144,11 @@ directory "/var/www/" do
 end
 
 link "/etc/couchdb/local.ini" do
-    to "/etc/chef-sysconf/current/mapidy/couchdb/local.ini"
-      only_if "test -d /etc/couchdb"
+  to "/etc/chef-sysconf/current/mapidy/couchdb/local.ini"
+  only_if "test -d /etc/couchdb"
 end
 
 link "/usr/local/etc/couchdb/local.ini" do
-    to "/usr/local/etc/chef-sysconf/current/mapidy/couchdb/local.ini"
-      only_if "test -d /usr/local/etc/couchdb"
+  to "/usr/local/etc/chef-sysconf/current/mapidy/couchdb/local.ini"
+  only_if "test -d /usr/local/etc/couchdb"
 end
