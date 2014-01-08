@@ -30,6 +30,10 @@ file "/etc/nginx/sites-enabled/default" do
   action :delete
 end
 
+file "/etc/nginx/sites-enabled/000-default" do
+    action :delete
+end
+
 directory "/var/www/ememoria/" do
   action :create
   recursive true

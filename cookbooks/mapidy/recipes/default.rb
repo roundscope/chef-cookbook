@@ -42,6 +42,10 @@ file "/etc/nginx/sites-enabled/default" do
   action :delete
 end
 
+file "/etc/nginx/sites-enabled/000-default" do
+    action :delete
+end
+
 link "/usr/local/etc/elasticsearch/elasticsearch.yml" do
     to "/usr/local/etc/chef-sysconf/current/mapidy/elasticsearch/elasticsearch.yml"
 end

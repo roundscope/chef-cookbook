@@ -10,5 +10,5 @@
 execute "install unicorn" do
     command 'su - deploy -c "gem install unicorn"'
     cwd "/home/deploy"
-    not_if "/usr/local/rvm/bin/gem list | grep unicorn"
+    not_if 'su - -c "gem list | grep unicorn"'
 end
