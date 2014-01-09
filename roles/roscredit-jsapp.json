@@ -1,0 +1,18 @@
+{
+  "name": "roscredit-jsapp",
+  "description": "Roundscope roscredit ruby application server role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "rs_git": {
+      "branch": "staging"
+    }
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[roscredit::jsapp]"
+  ],
+  "env_run_lists": {
+  }
+}
