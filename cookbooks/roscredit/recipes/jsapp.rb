@@ -7,7 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 include_recipe "apt"
+include_recipe "rvm"
 include_recipe "roundscope::deployuser"
+include_recipe "roundscope::deployrvm"
 include_recipe "roundscope::sshd_conf"
 include_recipe "roundscope::local_hostname"
 include_recipe "roundscope::knockd"
