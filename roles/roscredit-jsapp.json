@@ -1,6 +1,6 @@
 {
   "name": "roscredit-jsapp",
-  "description": "Roundscope roscredit ruby application server role",
+  "description": "Roundscope roscredit js static part server role",
   "json_class": "Chef::Role",
   "default_attributes": {
     "rs_git": {
