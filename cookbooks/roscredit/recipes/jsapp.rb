@@ -21,7 +21,7 @@ include_recipe "nodejs::npm"
 include_recipe "roundscope::grunt"
 include_recipe "roundscope::bower"
 
-directory "/var/www/roscredit-app/" do
+directory "/var/www/roscredit-app.js/" do
   action :create
   recursive true
   owner "deploy"
@@ -29,7 +29,7 @@ directory "/var/www/roscredit-app/" do
   mode 0775
 end
 
-directory "/var/www/roscredit-app/releases" do
+directory "/var/www/roscredit-app.js/releases" do
   action :create
   recursive true
   owner "deploy"
@@ -37,7 +37,7 @@ directory "/var/www/roscredit-app/releases" do
   mode 0775
 end
 
-directory "/var/www/roscredit-app/shared" do
+directory "/var/www/roscredit-app.js/shared" do
   action :create
   recursive true
   owner "deploy"
@@ -45,7 +45,7 @@ directory "/var/www/roscredit-app/shared" do
   mode 0775
 end
 
-directory "/var/www/roscredit-app/shared/log" do
+directory "/var/www/roscredit-app.js/shared/log" do
   action :create
   recursive true
   owner "deploy"
@@ -53,7 +53,7 @@ directory "/var/www/roscredit-app/shared/log" do
   mode 0775
 end
 
-directory "/var/www/roscredit-app/shared/pids" do
+directory "/var/www/roscredit-app.js/shared/pids" do
   action :create
   recursive true
   owner "deploy"
@@ -61,7 +61,7 @@ directory "/var/www/roscredit-app/shared/pids" do
   mode 0775
 end
 
-directory "/var/www/roscredit-app/shared/sockets" do
+directory "/var/www/roscredit-app.js/shared/sockets" do
   action :create
   recursive true
   owner "deploy"
@@ -69,7 +69,7 @@ directory "/var/www/roscredit-app/shared/sockets" do
   mode 0775
 end
 
-directory "/var/www/roscredit-app/shared/tmp" do
+directory "/var/www/roscredit-app.js/shared/tmp" do
   action :create
   recursive true
   owner "deploy"
@@ -77,7 +77,7 @@ directory "/var/www/roscredit-app/shared/tmp" do
   mode 0775
 end
 
-directory "/var/www/roscredit-app/shared/bundle" do
+directory "/var/www/roscredit-app.js/shared/bundle" do
   action :create
   recursive true
   owner "deploy"
