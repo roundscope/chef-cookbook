@@ -21,12 +21,6 @@ include_recipe "roundscope::imagemagick"
 include_recipe "roundscope::local_hostname"
 include_recipe "roundscope::knockd"
 include_recipe "roundscope::iptables"
-node.default['nodejs']['version']	= "0.10.24"
-node.default['nodejs']['npm']	= "1.3.21"
-include_recipe "nodejs::install_from_source"
-include_recipe "nodejs::npm"
-include_recipe "roundscope::grunt"
-include_recipe "roundscope::bower"
 
 directory "/var/www/roscredit-app/" do
   action :create
