@@ -86,6 +86,15 @@ directory "/var/www/roscredit-app/shared/bundle" do
   mode 0775
 end
 
+directory "/var/www/roscredit-app/shared/uploads" do
+  action :create
+  recursive true
+  owner "deploy"
+  group "deploy"
+  mode 0775
+end
+
+
 directory "/var/www/" do
   owner "deploy"
   group "deploy"
