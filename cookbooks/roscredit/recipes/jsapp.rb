@@ -45,6 +45,14 @@ directory "/var/www/roscredit-app.js/shared" do
   mode 0775
 end
 
+directory "/var/www/roscredit-app.js/shared/node_modules" do
+  action :create
+  recursive true
+  owner "deploy"
+  group "deploy"
+  mode 0775
+end
+
 directory "/var/www/roscredit-app.js/shared/log" do
   action :create
   recursive true
