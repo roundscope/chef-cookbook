@@ -14,6 +14,14 @@ include_recipe "roundscope::redis"
 include_recipe "roundscope::deployuser"
 include_recipe "roundscope::deployrvm"
 include_recipe "roundscope::sshd_conf"
+include_recipe "java"
+file "/usr/local/etc/elasticsearch/elasticsearch.yml" do
+  action :delete
+end
+link "/usr/local/etc/elasticsearch/elasticsearch.yml" do
+  action :delete
+end
+include_recipe "elasticsearch"
 node.default['rs_git']['branch']    = "staging"
 include_recipe "roundscope::gitdeploy"
 include_recipe "roundscope::unicorn"
@@ -21,6 +29,10 @@ include_recipe "roundscope::imagemagick"
 include_recipe "roundscope::local_hostname"
 include_recipe "roundscope::knockd"
 include_recipe "roundscope::iptables"
+
+link "/usr/local/etc/elasticsearch/elasticsearch.yml" do
+    to "/usr/local/etc/chef-sysconf/current/mapidy/elasticsearch/elasticsearch.yml"
+end
 
 directory "/var/www/roscredit-app/" do
   action :create
