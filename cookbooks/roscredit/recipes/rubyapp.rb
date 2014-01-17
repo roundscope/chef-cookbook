@@ -31,7 +31,7 @@ include_recipe "roundscope::knockd"
 include_recipe "roundscope::iptables"
 
 link "/usr/local/etc/elasticsearch/elasticsearch.yml" do
-    to "/usr/local/etc/chef-sysconf/current/mapidy/elasticsearch/elasticsearch.yml"
+    to "/usr/local/etc/chef-sysconf/current/roscredit-app/elasticsearch/elasticsearch.yml"
 end
 
 directory "/var/www/roscredit-app/" do
