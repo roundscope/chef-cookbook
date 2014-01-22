@@ -1,5 +1,5 @@
 {
-  "name": "roscredit-jsapp",
+  "name": "roscredit-admin",
   "description": "Roundscope roscredit-admin server role",
   "json_class": "Chef::Role",
   "default_attributes": {
