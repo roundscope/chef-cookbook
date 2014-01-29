@@ -16,6 +16,27 @@ include_recipe "roundscope::local_hostname"
 include_recipe "roundscope::knockd"
 include_recipe "roundscope::iptables"
 
+directory "/etc/nginx/ssl" do
+  action :create
+  recursive true
+  owner "root"
+  mode 0755
+end
+
+cookbook_file "/etc/nginx/ssl/server.key" do
+  source "nginx/server.key"
+  owner "root"
+  mode "644"
+  action :create
+end
+
+cookbook_file "/etc/nginx/ssl/server.crt" do
+  source "nginx/server.crt"
+  owner "root"
+  mode "644"
+  action :create
+end
+
 file "/etc/nginx/sites-enabled/default" do
   action :delete
 end
