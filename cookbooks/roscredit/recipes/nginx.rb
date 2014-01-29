@@ -7,14 +7,12 @@
 # All rights reserved - Do Not Redistribute
 #
 include_recipe "apt"
-include_recipe "nginx"
-include_recipe "roundscope::deployuser"
-include_recipe "roundscope::sshd_conf"
-node.default['rs_git']['branch']    = "staging"
-include_recipe "roundscope::gitdeploy"
-include_recipe "roundscope::local_hostname"
-include_recipe "roundscope::knockd"
-include_recipe "roundscope::iptables"
+
+directory "/etc/nginx" do
+  action :create
+  owner "root"
+  mode 0755
+end
 
 directory "/etc/nginx/ssl" do
   action :create
@@ -36,6 +34,16 @@ cookbook_file "/etc/nginx/ssl/server.crt" do
   mode "644"
   action :create
 end
+
+include_recipe "nginx"
+include_recipe "roundscope::deployuser"
+include_recipe "roundscope::sshd_conf"
+node.default['rs_git']['branch']    = "staging"
+include_recipe "roundscope::gitdeploy"
+include_recipe "roundscope::local_hostname"
+include_recipe "roundscope::knockd"
+include_recipe "roundscope::iptables"
+
 
 file "/etc/nginx/sites-enabled/default" do
   action :delete
