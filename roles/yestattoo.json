@@ -1,0 +1,18 @@
+{
+  "name": "yestattoo",
+  "description": "Roundscope yestattoo role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "rs_git": {
+      "branch": "staging"
+    }
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[yestattoo]"
+  ],
+  "env_run_lists": {
+  }
+}
