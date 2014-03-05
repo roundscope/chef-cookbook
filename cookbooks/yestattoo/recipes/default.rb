@@ -19,6 +19,7 @@ include_recipe "roundscope::shared-dirs"
 include_recipe "nginx"
 include_recipe "roundscope::deployrvm200"
 include_recipe "roundscope::libmysql"
+include_recipe "roundscope::unicorn"
 
 file "/etc/nginx/sites-enabled/default" do
     action :delete
