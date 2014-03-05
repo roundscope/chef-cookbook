@@ -8,6 +8,7 @@
 #
 include_recipe "apt"
 include_recipe "rvm"
+include_recipe "mysqld"
 include_recipe "roundscope::deployuser"
 include_recipe "roundscope::sshd_conf"
 node.default['rs_git']['branch']    = "staging"
