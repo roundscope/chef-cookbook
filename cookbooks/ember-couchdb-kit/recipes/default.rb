@@ -21,7 +21,7 @@ file "/etc/nginx/sites-enabled/000-default" do
   action :delete
 end
 
-link "/etc/nginx/sites-available/mapidy.conf" do
+link "/etc/nginx/sites-enabled/ember-couchdb-kit.conf" do
   to "/usr/local/etc/chef-sysconf/current/ember-couchdb-kit/nginx/ember-couchdb-kit.conf"
 end
 
