@@ -1,0 +1,1 @@
+default['database']['password']	= "superpass"

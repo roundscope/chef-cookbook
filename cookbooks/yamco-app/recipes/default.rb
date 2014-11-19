@@ -7,7 +7,6 @@
 # All rights reserved - Do Not Redistribute
 include_recipe 'apt'
 include_recipe 'build-essential'
-include_recipe 'roundscope::ruby_mysql'
 include_recipe 'rvm::system'
 node.default['nodejs']['version']       = "0.10.31"
 node.default['nodejs']['npm']   = "1.4.27"
@@ -25,6 +24,17 @@ include_recipe 'roundscope::app_dirs'
 node.default['rs_git']['branch']    = "staging"
 include_recipe "roundscope::gitdeploy"
 include_recipe "roundscope::bower"
+node.default['postgresql']['version'] = '9.3'
+node.default['postgresql']['pg_hba'] = [{:comment => '# yamco user config',
+                                         :type => 'local', :db => 'all', :user => 'yamco', :addr => nil, :method => 'password'}]
+include_recipe 'postgresql::server'
+include_recipe 'postgresql::server_debian'
+include_recipe 'postgresql::ruby'
+
+execute 'add yamco user to postgres' do
+  command "su - postgres -c \"psql -c \\\"create role yamco with createdb login password '#{node['database']['password']}'\\\"\""
+  not_if "su - postgres -c \"psql -c \\\"select * from pg_user where usename = 'yamco'\\\"\"| grep 'yamco'"
+end
 
 execute "install ember-cli@0.0.36" do
   command 'su - -c "npm install -g ember-cli@0.0.36"'
