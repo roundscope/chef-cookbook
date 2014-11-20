@@ -25,11 +25,10 @@ node.default['rs_git']['branch']    = "staging"
 include_recipe "roundscope::gitdeploy"
 include_recipe "roundscope::bower"
 node.default['postgresql']['version'] = '9.3'
-node.default['postgresql']['pg_hba'] = [{:comment => '# yamco user config',
-                                         :type => 'local', :db => 'all', :user => 'yamco', :addr => nil, :method => 'password'}]
+node.default['postgresql']['pg_hba'] = [{:comment => '# yamco user config',:type => 'local', :db => 'all',
+                                         :user => 'yamco', :method => 'password'}]
 include_recipe 'postgresql::server'
 include_recipe 'postgresql::server_debian'
-include_recipe 'postgresql::ruby'
 
 execute 'add yamco user to postgres' do
   command "su - postgres -c \"psql -c \\\"create role yamco with createdb login password '#{node['database']['password']}'\\\"\""
