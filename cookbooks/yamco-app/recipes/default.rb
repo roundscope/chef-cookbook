@@ -68,7 +68,7 @@ directory "/var/www/#{node['app_name']}/shared/yamco-app/node_modules" do
   mode 0775
 end
 
-directory "/var/www/#{node['app_name']}/shared/yamco-app/vendor" do
+directory "/var/www/#{node['app_name']}/shared/yamco-app/bower_components" do
   action :create
   recursive true
   owner "deploy"
@@ -84,7 +84,7 @@ directory "/var/www/#{node['app_name']}/shared/yamco-pages/node_modules" do
   mode 0775
 end
 
-directory "/var/www/#{node['app_name']}/shared/yamco-pages/vendor" do
+directory "/var/www/#{node['app_name']}/shared/yamco-pages/bower_components" do
   action :create
   recursive true
   owner "deploy"
