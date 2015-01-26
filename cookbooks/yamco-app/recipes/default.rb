@@ -60,6 +60,26 @@ service "nginx" do
   action :restart
 end
 
+directory "/var/www/#{node['app_name']}/shared/uploads" do
+  action :create
+  recursive true
+  owner "deploy"
+  group "deploy"
+  mode 0775
+end
+
+directory "/var/www/#{node['app_name']}/cdn" do
+  action :create
+  recursive true
+  owner "deploy"
+  group "deploy"
+  mode 0775
+end
+
+link "/var/www/#{node['app_name']}/shared/uploads/" do
+    to "/var/www/#{node['app_name']}/cdn/uploads"
+end
+
 directory "/var/www/#{node['app_name']}/shared/yamco-app/node_modules" do
   action :create
   recursive true
